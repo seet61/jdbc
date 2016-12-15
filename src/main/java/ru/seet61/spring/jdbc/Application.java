@@ -21,7 +21,8 @@ public class Application {
         SimpleDriverDataSource dataSource = new SimpleDriverDataSource();
         dataSource.setDriverClass(org.h2.Driver.class);
         dataSource.setUsername("sa");
-        dataSource.setUrl("jdbc:h2:mem");
+
+        dataSource.setUrl("jdbc:h2:file:" + System.getProperty("user.dir"));
         dataSource.setPassword("");
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
